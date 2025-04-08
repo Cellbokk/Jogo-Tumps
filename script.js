@@ -30,21 +30,22 @@ botao.addEventListener('click', (e) => {
 
 const btnUpgradeCursor = document.getElementById('comprar-cursor');
 
-btnUpgradeCursor.addEventListener('click', () => {
+btnUpgradeCursor.addEventListener('click', (e) => {
     if (contador >= 50) {
         contador -= 50;
         contadorEl.textContent = `Quantidade de TumpsCoins: ${contador}`;
 
-        // Aplica o novo cursor
         document.body.classList.add('upgrade-cursor');
-
-        // Desativa o botão e muda o texto
         btnUpgradeCursor.disabled = true;
         btnUpgradeCursor.textContent = "Cursor Aprimorado!";
+
+        // 🎉 CHAMADA DO CONFETE
+        soltarConfete(e.clientX, e.clientY);
     } else {
         alert("Você precisa de 50 TumpsCoins para esse upgrade!");
     }
 });
+
 
 particlesJS("particles-js", {
     particles: {
@@ -103,3 +104,32 @@ particlesJS("particles-js", {
     retina_detect: true
   });
   
+  function soltarConfete(x, y) {
+    const cores = ['#FD33A0', '#F7CFCA', '#ffffff', '#1B1A55'];
+
+    for (let i = 0; i < 25; i++) {
+        const confete = document.createElement('div');
+        confete.classList.add('confete');
+        confete.style.backgroundColor = cores[Math.floor(Math.random() * cores.length)];
+
+        // Joga pra cima com ângulos aleatórios
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 100 + 50;
+        const dx = Math.cos(angle) * speed;
+        const dy = Math.sin(angle) * speed * -1; // sobe primeiro
+
+        confete.style.setProperty('--dx', `${dx}px`);
+        confete.style.setProperty('--dy', `${dy + 200}px`);
+
+        confete.style.left = `${x}px`;
+        confete.style.top = `${y}px`;
+
+        document.body.appendChild(confete);
+
+        setTimeout(() => {
+            confete.remove();
+        }, 1200);
+    }
+}
+
+
