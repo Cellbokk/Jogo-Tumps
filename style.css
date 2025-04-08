@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka', sans-serif;
+    
+}
+
+body{
+    background-color: #089a75;
+    cursor: url('/Assets/cursor.png'), auto;
+}
+
+
+button:hover {
+    cursor: url('/Assets/finger.png'), auto;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* atrás do conteúdo, mas ainda interativo */
+  }
+main, .logo-container, .game-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+
+.logo-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+  
+  .logo-text {
+    font-size: 120px;
+    font-weight: 500;
+    z-index: 2;
+    color: #222222;
+    margin-bottom: 50px; /* separa do conteúdo abaixo */
+}
+  
+  .game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* espaçamento entre contador e botão */
+}
+  
+
+.Aperta {
+    all: unset;
+  display: inline-block; 
+  background-color: #1DCD9F;
+  padding: 30px;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.Aperta:hover {
+    background-color: #1b715a;
+    
+}
+
+.floating-text {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    animation: subir 0.8s ease-out forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes subir {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.Contador {
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+
+.logo-text {    
+    margin-bottom: 200px;
+    font-size: 120px;
+    font-weight: 500;
+    z-index: 2; /* Fica na frente dos círculos */
+    color: #222222;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.3; /* transparência bonita */
+}
+  
+.circle1 {
+    width: 150px;
+    height: 150px;
+    background-color: #ff00ee;
+    top: 182px;
+    left: 105vh;
+}
+  
+.circle2 {
+    width: 100px;
+    height: 100px;
+    background-color: #20ff3a;
+    top: 270px;
+    right: 107vh;
+}
+
+
+
+.loja-upgrades h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.loja-upgrades {
+    position: absolute;
+    top: 40%;
+    left: 100px;
+    transform: translateY(-50%);
+    background-color: #14b48c;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    color: #ffffff;
+    z-index: 5; /* Aumenta pra ficar acima dos círculos */
+}
+  
+  .loja-upgrades h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .upgrade-btn {
+    all: unset;
+    display: block;
+    background-color: #1DCD9F;
+    color: #222;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .upgrade-btn:hover {
+    background-color: #1b715a;
+
+  }
+
+  body.upgrade-cursor {
+    cursor: url('/Assets/cursorNivel2.png'), auto;
+  }
+  body.upgrade-cursor button:hover {
+    cursor: url('/Assets/fingerNivel2.png'), pointer;
+  }
+  
+
