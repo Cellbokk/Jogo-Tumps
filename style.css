@@ -211,6 +211,16 @@ main, .logo-container, .game-content {
       opacity: 0;
     }
   }
+  .Aperta {
+    transition: transform 0.1s ease;
+  }
+  
+  .Aperta:active {
+    transform: scale(1.1); /* Aumenta 10% ao clicar */
+  }
+  
+
+  
   
   
 
